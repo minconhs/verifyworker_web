@@ -1,0 +1,16 @@
+node_modules/
+runtime/
+.idea/
+.vscode/
+.codex/
+*.log
+.git
+.gitignore
+.env
+README.md
+LICENSE
+package.json
+package-lock.json
+tailwind.config.js
+*.sql
+*.sh
