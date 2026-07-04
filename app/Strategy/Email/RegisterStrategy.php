@@ -22,7 +22,7 @@ class RegisterStrategy implements EmailInterface
         // 组装队列数据
         $queue_data = ['email' => $email, 'subject' => 'Verify Your Account', 'template' => $this->template($data)];
         // 获取发送邮件生产者
-        $sendEmailProducer = new EmailProducer(json_encode($queue_data));
+        $sendEmailProducer = new EmailProducer($queue_data);
         // 发送消息到队列
         return $this->producer->produce($sendEmailProducer);
     }
