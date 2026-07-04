@@ -19,10 +19,10 @@ class RedisService
      * @param string $key
      * @return bool
      */
-    public function del(string $old_session)
+    public function del(string $key): bool
     {
         try {
-            return $this->redis->del($old_session);
+            return $this->redis->del($key);
         } catch (\RedisException $e) {
             return false;
         }

@@ -138,7 +138,9 @@ class CallbackService extends AbstractService
         }
 
         // 删除用户的旧会话，强制用户重新登录
-        $this->redis->del($old_session);
+        if (!empty($old_session)) {
+            $this->redis->del($old_session);
+        }
 
         // 发布登录事件
         $this->event->dispatch($member_log);
