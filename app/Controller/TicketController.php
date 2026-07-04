@@ -31,7 +31,7 @@ class TicketController extends AbstractController
     #[GetMapping('/ticket')]
     public function index(RequestInterface $request, ResponseInterface $response): \Psr\Http\Message\ResponseInterface
     {
-// 获取分页参数
+        // 获取分页参数
         $page = $request->query('page', 1);
         // 每页记录数，默认为5
         $per_page = $request->query('per_page', 10);
